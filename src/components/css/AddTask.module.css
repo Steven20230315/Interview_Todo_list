@@ -1,0 +1,32 @@
+.add_task_container {
+  margin: 2rem var(--container-margin) 1rem var(--container-margin);
+
+  >p {
+    font-size: 0.6rem;
+  }
+
+}
+
+.task_input_form {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+
+  >input {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem;
+    outline: none;
+  }
+
+  >button {
+    font-size: 1.9rem;
+    width: 46px;
+    border-radius: 0.25rem;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

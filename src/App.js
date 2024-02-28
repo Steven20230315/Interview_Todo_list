@@ -1,25 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+
+import ListContainer from './components/TaskView';
+import ProgressBar from './components/ProgressBar';
+import AddTask from './components/AddTask';
+import SwitchBtn from './components/SwitchBtn';
+import useTaskManager from './customHooks/useTaskManager';
+import Header from './components/Header';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// component state
+	const {
+		handleAddTask,
+		handleDeleteTask,
+		handleToggleTaskChecked,
+		tasks,
+		setTasks,
+	} = useTaskManager([
+		{ title: 'task1', id: 1, checked: true },
+		{ title: 'task2', id: 2, checked: false },
+		{ title: 'task3', id: 3, checked: false },
+		{ title: 'task4', id: 4, checked: true },
+	]);
+
+	const [isCompletedTasksEnd, setIsCompletedEnd] = useState(false);
+
+	const calculateProgress = () => {
+		const completedTaskCount = tasks.filter((task) => task.checked).length;
+		const totalTaskCount = tasks.length;
+		if (totalTaskCount === 0) return 0;
+		return Math.round((completedTaskCount / totalTaskCount) * 100);
+	};
+	// component handler
+
+	const toggleDoneTasksEnd = () => {
+		setIsCompletedEnd(!isCompletedTasksEnd);
+	};
+
+	return (
+		<>
+			<Header>
+				<div className='title'>
+					<h2>Todo List</h2>
+					<p>Add things to do</p>
+				</div>
+				<ProgressBar progress={calculateProgress()} />
+			</Header>
+
+			<ListContainer
+				tasks={tasks}
+				onHandleDeleteTask={handleDeleteTask}
+				onHandleToggleTaskChecked={handleToggleTaskChecked}
+				completedTasksEnd={isCompletedTasksEnd}
+			/>
+
+			<SwitchBtn onToggleDoneTasksEnd={toggleDoneTasksEnd} />
+			<AddTask onAddTask={handleAddTask} />
+		</>
+	);
 }
 
 export default App;

@@ -1,0 +1,60 @@
+.checkbox_container {
+  display: flex;
+  align-items: center;
+  margin-left: 0.3rem;
+
+  /* Remove default checkbox (invisible and does not take up space) */
+  & input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  /* Customize the label */
+  & label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    /* Create a custom checkbox */
+    &::before {
+      content: '';
+      border: 1px solid var(--checked-btn-color);
+      display: inline-block;
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: .2rem;
+    }
+
+  }
+
+}
+
+.checkbox_container label:hover:not(input[type='checkbox']:checked+label):before,
+.checkbox_container input[type='checkbox']:checked+label::before {
+  background-color: var(--checked-btn-color);
+  content: '\002714';
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox_container label:hover:not(input[type='checkbox']:checked+label) {
+
+  &::before,
+  & span {
+    opacity: 0.7;
+  }
+
+  & span {
+    text-decoration: line-through;
+  }
+}
+
+
+.checkbox_container input[type='checkbox']:checked+label span {
+  text-decoration: line-through;
+}

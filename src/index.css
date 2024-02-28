@@ -5,9 +5,123 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --background-primary-color: #ddf0ff;
+  --background-secondary-color: #e4e5fc;
+  --border-separate-color: #cfd1cf;
+  --progress-bar-color: #97b2fd;
+  --text-color: #7a89b2;
+  --secondary-text-color: #bbc2d1;
+  --checked-btn-color: #8D9CCF;
+  --add-task-btn-color: #829CE3;
+  --container-margin: 1.5rem;
+  --scrollbar-width: 6px;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  color: var(--text-color);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+#root {
+  width: 390px;
+  height: 500px;
+  border-radius: 1px;
+  background-image: linear-gradient(var(--background-primary-color), var(--background-secondary-color));
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.add_task_btn {
+  background-color: var(--add-task-btn-color);
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.task_list {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: transparent;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--add-task-btn-color);
+    border-radius: 0.5rem;
+  }
+
+
+}
+
+
+.header {
+  margin: 1.5rem var(--container-margin) 1rem var(--container-margin);
+
+  & .title {
+    border-bottom: 2px solid var(--border-separate-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    
+    & h2 {
+      font-weight: 400;
+    }
+    & p {
+      font-size: 0.8rem;
+      color: var(--secondary-text-color);
+    }
+  }
+}
+
+
+.progress_container {
+  position: sticky;
+  top: 0;
+  /* Fix the ProgressBar at the top of the container */
+  background-color: transparent;
+  /* Ensure the ProgressBar is visible */
+  z-index: 1;
+  /* Ensure the ProgressBar is above the scrolling content */
+}
+
+.task {
+  display: flex;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  padding: 0.55rem;
+  align-items: center;
+  margin: 0 calc(var(--container-margin) - var(--scrollbar-width)) 0.5rem var(--container-margin);
+  border-left: 3.5px solid var(--checked-btn-color);
+  font-size: 0.9rem;
+}
+
+.delete_btn {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
 }
