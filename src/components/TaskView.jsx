@@ -29,7 +29,7 @@ export default function ListContainer({
 				scrollBottomRef.current.scrollIntoView({ behavior: 'smooth' });
 			}
 		}
-	}, [tasks, previousTasksLength]);
+	}, [tasks.length, previousTasksLength]);
 
 	return (
 		<main className='task_list'>
