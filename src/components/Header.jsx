@@ -1,5 +1,4 @@
-import React from 'react';
-
+import style from '../components/css/Header.module.css';
 export default function Header({
 	children,
 	title = 'Todo List',
@@ -7,7 +6,7 @@ export default function Header({
 }) {
 	return (
 		<div className={style.header}>
-			<div className='title'>
+			<div className={style.title}>
 				<h2>{title}</h2>
 				<p>{description}</p>
 			</div>
