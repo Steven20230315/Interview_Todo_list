@@ -5,6 +5,7 @@
   padding: 0.55rem;
   align-items: center;
   margin: 0 calc(var(--container-margin) - var(--scrollbar-width)) 0.5rem var(--container-margin);
+  /* To align perfectly, we need to subtract the scrollbar width from the right margin */
   border-left: 3.5px solid var(--checked-btn-color);
   font-size: 0.9rem;
 }
@@ -23,6 +24,6 @@
   }
 }
 
-.delete_icon{
+.delete_icon {
   stroke-width: 2px;
 }

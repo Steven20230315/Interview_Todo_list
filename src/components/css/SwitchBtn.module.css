@@ -9,6 +9,7 @@
   border-top: 2px solid var(--border-separate-color);
   font-size: 0.7rem;
 
+  /* Make the default checkbox invisible and not take up space */
   & input[type='checkbox'] {
     position: absolute;
     opacity: 0;
@@ -16,6 +17,7 @@
     width: 0;
   }
 
+  /* Customize the label */
   & label {
     cursor: pointer;
     display: flex;

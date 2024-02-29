@@ -32,6 +32,7 @@
 
 }
 
+/* Display check mark when checkbox is checked or label is hovered */
 .checkbox_container label:hover:not(input[type='checkbox']:checked+label):before,
 .checkbox_container input[type='checkbox']:checked+label::before {
   background-color: var(--checked-btn-color);
@@ -42,13 +43,16 @@
   justify-content: center;
 }
 
+/* When label is hovered and checkbox is not checked*/
 .checkbox_container label:hover:not(input[type='checkbox']:checked+label) {
 
+  /* Change the opacity of the mark and task title */
   &::before,
   & span {
     opacity: 0.7;
   }
 
+  /* Add a line-through to the task title */
   & span {
     text-decoration: line-through;
   }
