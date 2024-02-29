@@ -2,7 +2,8 @@
   margin: 2rem var(--container-margin) 1rem var(--container-margin);
 
   >p {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
+    position: relative;
   }
 
 }
@@ -38,4 +39,10 @@
   padding: 0.5rem;
   color: white;
   cursor: pointer;
+}
+
+.hint {
+  position: absolute;
+  top: -5px;
+  font-size: .7rem;
 }
