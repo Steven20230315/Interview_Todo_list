@@ -6,13 +6,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --background-primary-color: #ddf0ff;
-  --background-secondary-color: #e4e5fc;
+  --background-secondary-color: #d5d7ff;
   --border-separate-color: #cfd1cf;
   --progress-bar-color: #97b2fd;
   --text-color: #7a89b2;
   --secondary-text-color: #bbc2d1;
   --checked-btn-color: #8D9CCF;
-  --add-task-btn-color: #829CE3;
+  --add-task-btn-color: #7491e0;
+  --add-task-btn-hover-color: #6686dc;
   --container-margin: 1.5rem;
   --scrollbar-width: 6px;
 
@@ -41,10 +42,3 @@ code {
   flex-direction: column;
   position: relative;
 }
-
-
-
-
-
-
-
