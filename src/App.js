@@ -22,7 +22,7 @@ function App() {
 		{ title: 'task4', id: 4, checked: true },
 	]);
 
-	const [isCompletedTasksEnd, setIsCompletedEnd] = useState(false);
+	const [moveCompletedTasksToBottom, setMoveCompletedTasksToBottom] = useState(false);
 
 	const calculateProgress = () => {
 		const completedTaskCount = tasks.filter((task) => task.checked).length;
@@ -33,7 +33,7 @@ function App() {
 	// component handler
 
 	const toggleDoneTasksEnd = () => {
-		setIsCompletedEnd(!isCompletedTasksEnd);
+		setMoveCompletedTasksToBottom(!moveCompletedTasksToBottom);
 	};
 
 	return (
@@ -50,7 +50,7 @@ function App() {
 				tasks={tasks}
 				onHandleDeleteTask={handleDeleteTask}
 				onHandleToggleTaskChecked={handleToggleTaskChecked}
-				completedTasksEnd={isCompletedTasksEnd}
+				moveCompletedTasksToBottom={moveCompletedTasksToBottom}
 			/>
 
 			<SwitchBtn onToggleDoneTasksEnd={toggleDoneTasksEnd} />

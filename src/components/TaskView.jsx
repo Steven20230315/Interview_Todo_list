@@ -6,15 +6,15 @@ export default function ListContainer({
 	tasks,
 	onHandleDeleteTask,
 	onHandleToggleTaskChecked,
-	completedTasksEnd,
+	moveCompletedTasksToBottom,
 }) {
 	const scrollBottomRef = useRef();
 
 	const previousTasksLength = usePrevious(tasks.length);
 
-	//
+	// Change the order of tasks when moveCompletedTasksToBottom is true. It does not mutate the original array
 	const renderTasks = () => {
-		if (completedTasksEnd) {
+		if (moveCompletedTasksToBottom) {
 			const completedTask = tasks.filter((task) => task.checked);
 			const unfinishedTask = tasks.filter((task) => !task.checked);
 			return [...unfinishedTask, ...completedTask];
