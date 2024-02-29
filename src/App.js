@@ -38,11 +38,7 @@ function App() {
 
 	return (
 		<>
-			<Header>
-				<div className='title'>
-					<h2>Todo List</h2>
-					<p>Add things to do</p>
-				</div>
+			<Header title='Todo List' description='Add things to do'>
 				<ProgressBar progress={calculateProgress()} />
 			</Header>
 
