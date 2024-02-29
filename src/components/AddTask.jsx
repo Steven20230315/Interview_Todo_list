@@ -2,15 +2,16 @@ import { useState, useRef, useId } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import style from './css/AddTask.module.css';
 export default function AddTask({ onAddTask }) {
-	//component state
+
+
 	const inputRef = useRef(null);
-	//component handler
 
 	const handleFormSubmit = () => {
 		const task = {
 			title: inputRef.current.value,
 			id: uuidv4(),
 		};
+		// If input value is empty, do nothing
 		if (!task.title) {
 			return;
 		} else {
@@ -19,6 +20,7 @@ export default function AddTask({ onAddTask }) {
 		inputRef.current.value = '';
 	};
 
+	// Keyboard event. Press enter to add task (input value is not empty) or press escape to clear input
 	const handleKeyDown = (event) => {
 		if (event.key === 'Enter') {
 			handleFormSubmit();
