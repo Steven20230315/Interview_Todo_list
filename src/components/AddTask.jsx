@@ -1,10 +1,8 @@
-import { useState, useRef, useId } from 'react';
+import { useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import style from './css/AddTask.module.css';
 export default function AddTask({ onAddTask }) {
-	//component state
 	const inputRef = useRef(null);
-	//component handler
 
 	const handleFormSubmit = () => {
 		const task = {
