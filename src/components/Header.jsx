@@ -6,7 +6,7 @@ export default function Header({
 	description = 'Add things to do',
 }) {
 	return (
-		<div className='header'>
+		<div className={style.header}>
 			<div className='title'>
 				<h2>{title}</h2>
 				<p>{description}</p>

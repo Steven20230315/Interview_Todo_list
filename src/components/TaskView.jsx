@@ -1,8 +1,8 @@
 import { useRef, useEffect } from 'react';
 import Task from './Task';
 import usePrevious from '../customHooks/usePrevious';
-
-export default function ListContainer({
+import style from './css/TaskView.module.css';
+export default function TaskView({
 	tasks,
 	onHandleDeleteTask,
 	onHandleToggleTaskChecked,
@@ -32,7 +32,7 @@ export default function ListContainer({
 	}, [tasks.length, previousTasksLength]);
 
 	return (
-		<main className='task_list'>
+		<main className={style.task_list}>
 			{renderTasks().map((task) => (
 				<Task
 					key={task.id}

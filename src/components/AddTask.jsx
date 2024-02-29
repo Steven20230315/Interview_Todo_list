@@ -34,7 +34,7 @@ export default function AddTask({ onAddTask }) {
 			<p>Add to list</p>
 			<div className={style.task_input_form}>
 				<input type='text' ref={inputRef} onKeyDown={handleKeyDown} />
-				<button className='add_task_btn' onClick={handleFormSubmit}>
+				<button className={style.add_task_btn} onClick={handleFormSubmit}>
 					+
 				</button>
 			</div>
