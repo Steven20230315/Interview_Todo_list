@@ -32,7 +32,6 @@
 
 }
 
-/* Display Check Mark when label is hovered or input is checked */
 .checkbox_container label:hover:not(input[type='checkbox']:checked+label):before,
 .checkbox_container input[type='checkbox']:checked+label::before {
   background-color: var(--checked-btn-color);
@@ -44,18 +43,18 @@
 }
 
 .checkbox_container label:hover:not(input[type='checkbox']:checked+label) {
-  /* Make the color of the check mark and the task title lighter when label is hovered but input is not checked */
+
   &::before,
   & span {
     opacity: 0.7;
   }
-  /* Add a strike through effect to the task title when label is hovered */
+
   & span {
     text-decoration: line-through;
   }
 }
 
-/* Add a strike through effect to the task title when input is checked */
+
 .checkbox_container input[type='checkbox']:checked+label span {
   text-decoration: line-through;
 }

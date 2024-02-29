@@ -5,7 +5,6 @@
   padding: 0.55rem;
   align-items: center;
   margin: 0 calc(var(--container-margin) - var(--scrollbar-width)) 0.5rem var(--container-margin);
-  /* To align perfectly, deduct the scrollbar width from right margin */
   border-left: 3.5px solid var(--checked-btn-color);
   font-size: 0.9rem;
 }

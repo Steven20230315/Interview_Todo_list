@@ -4,7 +4,7 @@ export default function Checkbox({ data, onHandleToggleTaskChecked }) {
 		<div className={style.checkbox_container}>
 			<input
 				type='checkbox'
-				name={data.id}
+				name=''
 				id={data.id}
 				checked={data.checked}
 				onChange={() => onHandleToggleTaskChecked(data.id)}

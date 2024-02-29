@@ -8,6 +8,10 @@ export default function TaskView({
 	onHandleToggleTaskChecked,
 	moveCompletedTasksToBottom,
 }) {
+	const scrollBottomRef = useRef();
+
+	const previousTasksLength = usePrevious(tasks.length);
+
 	// Change the order of tasks when moveCompletedTasksToBottom is true. It does not mutate the original array
 	const renderTasks = () => {
 		if (moveCompletedTasksToBottom) {
@@ -18,10 +22,6 @@ export default function TaskView({
 			return tasks;
 		}
 	};
-
-	const scrollBottomRef = useRef();
-	// Access previous tasks length so that the useEffect can be triggered only when new tasks are added
-	const previousTasksLength = usePrevious(tasks.length);
 	// Keep the scroll at the bottom of the list when new tasks are added \
 	useEffect(() => {
 		if (tasks.length > previousTasksLength) {
