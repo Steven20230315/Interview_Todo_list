@@ -91,37 +91,5 @@ code {
 }
 
 
-.progress_container {
-  position: sticky;
-  top: 0;
-  /* Fix the ProgressBar at the top of the container */
-  background-color: transparent;
-  /* Ensure the ProgressBar is visible */
-  z-index: 1;
-  /* Ensure the ProgressBar is above the scrolling content */
-}
 
-.task {
-  display: flex;
-  background-color: #fff;
-  border-radius: 0.2rem;
-  padding: 0.55rem;
-  align-items: center;
-  margin: 0 calc(var(--container-margin) - var(--scrollbar-width)) 0.5rem var(--container-margin);
-  border-left: 3.5px solid var(--checked-btn-color);
-  font-size: 0.9rem;
-}
 
-.delete_btn {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  opacity: 0.6;
-
-  &:hover {
-    opacity: 1;
-  }
-}

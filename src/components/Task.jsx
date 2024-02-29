@@ -1,5 +1,6 @@
 import Checkbox from './Checkbox';
 import { CgClose } from 'react-icons/cg';
+import style from './css/Task.module.css';
 
 export default function Task({
 	data,
@@ -7,17 +8,17 @@ export default function Task({
 	onHandleToggleTaskChecked,
 }) {
 	return (
-		<section className='task'>
+		<section className={style.task}>
 			<Checkbox
 				data={data}
 				onHandleToggleTaskChecked={onHandleToggleTaskChecked}
 			/>
 
 			<button
-				className='delete_btn'
+				className={style.delete_btn}
 				onClick={() => onHandleDeleteTask(data.id)}
 			>
-				<CgClose style={{ strokeWidth: '2px' }} />
+				<CgClose className={style.delete_icon} />
 			</button>
 		</section>
 	);
