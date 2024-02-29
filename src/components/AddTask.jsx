@@ -10,6 +10,7 @@ export default function AddTask({ onAddTask }) {
 		const task = {
 			title: inputRef.current.value,
 			id: uuidv4(),
+			checked: false,
 		};
 		if (!task.title) {
 			return;
