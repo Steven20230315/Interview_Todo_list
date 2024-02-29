@@ -1,4 +1,4 @@
-import React from 'react';
+import style from './css/Header.module.css';
 
 export default function Header({
 	children,

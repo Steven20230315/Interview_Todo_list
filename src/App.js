@@ -30,7 +30,6 @@ function App() {
 		if (totalTaskCount === 0) return 0;
 		return Math.round((completedTaskCount / totalTaskCount) * 100);
 	};
-	// component handler
 
 	const toggleDoneTasksEnd = () => {
 		setMoveCompletedTasksToBottom(!moveCompletedTasksToBottom);

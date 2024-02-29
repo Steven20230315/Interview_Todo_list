@@ -9,6 +9,7 @@
   border-top: 2px solid var(--border-separate-color);
   font-size: 0.7rem;
 
+  /* Invisible and does not take up space */
   & input[type='checkbox'] {
     position: absolute;
     opacity: 0;
@@ -51,6 +52,7 @@
   }
 }
 
+/* Animation for the switch */
 input[type='checkbox']:checked+.slider {
   transform: translateX(0.8rem);
 }

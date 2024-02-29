@@ -5,6 +5,7 @@
   background-color: transparent;
   position: relative;
 
+  /* Custom scrollbar */
   &::-webkit-scrollbar {
     width: var(--scrollbar-width);
     background-color: transparent;
@@ -14,6 +15,4 @@
     background-color: var(--add-task-btn-color);
     border-radius: 0.5rem;
   }
-
-
 }
