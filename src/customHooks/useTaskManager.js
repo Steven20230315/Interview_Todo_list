@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+// Custom hook to manage tasks
 export default function useTaskManager(initialTasks) {
 	const [tasks, setTasks] = useState(initialTasks || []);
 
